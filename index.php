@@ -118,50 +118,51 @@ function randomHeroName()
 combineNames();
 
 
-// new_exercise(7);
-// function copyright(int $year) {
-//     return "&copy; $year BeCode";
-// }
-// //print the copyright
-// copyright(date('Y'));
+new_exercise(7);
+function copyright($year) {
+    // date_default_timezone_set('UTC');
 
-// new_exercise(8);
-// function login(string $email, string $password) {
-//     if($email == 'john@example.be' || $password == 'pocahontas') {
-//         return 'Welcome John';
-//         return ' Smith';
-//     }
-//     return 'No access';
-// }
+    return "&copy; $year BeCode";
+}
+//print the copyright
+echo copyright(date('Y'));
 
-// //do not change anything below
-// //should great the user with his full name (John Smith)
-// echo login('john@example.be', 'pocahontas');
-// //no access
+new_exercise(8);
+function login(string $email, string $password) {
+    if($email == 'john@example.be' && $password == 'pocahontas') {
+        return 'Welcome John Smith';
+    }
+    return 'No access';
+}
+
+//do not change anything below
+//should great the user with his full name (John Smith)
+echo login('john@example.be', 'pocahontas');
+//no access
 // echo login('john@example.be', 'dfgidfgdfg');
-// //no access
+//no access
 // echo login('wrong@example.be', 'wrong');
-// //you can change things again!
+//you can change things again!
 
-// new_exercise(9);
-// function isLinkValid(string $link) {
-//     $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
+new_exercise(9);
+function isLinkValid(string $link) {
+    $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
 
-//     foreach ($unacceptables as $unacceptable) {
-//         if (strpos($link, $unacceptable) == true) {
-//             return 'Unacceptable Found<br />';
-//         }
-//     }
-//     return 'Acceptable<br />';
-// }
-// //invalid link
-// isLinkValid('http://www.google.com/hack.pdf');
-// //invalid link
-// isLinkValid('https://google.com');
-// //VALID link
-// isLinkValid('http://google.com');
-// //VALID link
-// isLinkValid('http://google.com/test.txt');
+    foreach ($unacceptables as $unacceptable) {
+        if (strpos($link, $unacceptable) == true) {
+            return 'Unacceptable Found<br />';
+        }
+    }
+    return 'Acceptable<br />';
+}
+//invalid link
+isLinkValid('http://www.google.com/hack.pdf');
+//invalid link
+isLinkValid('https://google.com');
+//VALID link
+isLinkValid('http://google.com');
+//VALID link
+isLinkValid('http://google.com/test.txt');
 
 
 // new_exercise(10);
