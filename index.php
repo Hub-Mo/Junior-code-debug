@@ -150,31 +150,40 @@ function isLinkValid(string $link) {
 
     foreach ($unacceptables as $unacceptable) {
         if (strpos($link, $unacceptable) == true) {
-            return 'Unacceptable Found<br />';
-        }
+            return 'Unacceptable Found <br/>';
+        } 
     }
-    return 'Acceptable<br />';
+    return 'Acceptable <br/>';
 }
 //invalid link
-isLinkValid('http://www.google.com/hack.pdf');
+echo isLinkValid(' http://www.google.com/hack.pdf ');
 //invalid link
-isLinkValid('https://google.com');
+echo isLinkValid(' https://google.com ');
 //VALID link
-isLinkValid('http://google.com');
+echo isLinkValid(' http://google.com ');
 //VALID link
-isLinkValid('http://google.com/test.txt');
+echo isLinkValid(' http://google.com/test.txt ');
 
 
-// new_exercise(10);
+new_exercise(10);
 
-// //Filter the array $areTheseFruits to only contain valid fruits
-// //do not change the arrays itself
-// $areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
-// $validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
-// //from here on you can change the code
-// for($i=0; $i <= count($areTheseFruits); $i++) {
-//     if(!in_array($areTheseFruits[$i], $validFruits)) {
-//         unset($areTheseFruits[$i]);
-//     }
-// }
-// var_dump($areTheseFruits);//do not change this ?>
+//Filter the array $areTheseFruits to only contain valid fruits
+//do not change the arrays itself
+$areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
+$validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
+//from here on you can change the code
+global $areTheseFruits;
+foreach($areTheseFruits as &$items){
+    if(!in_array($items, $validFruits) == true) {
+        $key = array_search($items, $areTheseFruits);
+        unset($areTheseFruits[$key]);
+    };
+    foreach($validFruits as &$frutis){
+        if(!in_array($frutis, $areTheseFruits)) {
+            $key = array_search($frutis, $validFruits);
+            array_push($areTheseFruits, $validFruits[$key]);
+        }
+    }
+
+}
+var_dump($areTheseFruits);//do not change this ?>
