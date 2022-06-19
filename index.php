@@ -77,7 +77,7 @@ new_exercise(6);
 // The fixed code should echo the following at the bottom:
 // Here is the name: $name - $name2
 // $name variables are decided as seen in the code, fix all the bugs whilst keeping the functionality!
-// $arr = [];
+$arr = [];
 
 echo "Here is the name: ";
 
@@ -92,13 +92,13 @@ function combineNames($str1 = "", $str2 = "") {
 }
 
 
-// function randomGenerate($arr, $amount) {
-//     for ($i = $amount; $i > 0; $i--) {
-//         array_push($arr, randomHeroName());
-//     }
+function randomGenerate($arr, $amount) {
+    for ($i = $amount; $i > 0; $i--) {
+        array_push($arr, randomHeroName());
+    }
 
-//     return $amount;
-// }
+    return $amount;
+}
 $counter = 0;
 $parames = [];
 function randomHeroName()
@@ -186,4 +186,25 @@ foreach($areTheseFruits as &$items){
     }
 
 }
-var_dump($areTheseFruits);//do not change this ?>
+var_dump($areTheseFruits);//do not change this 
+
+new_exercise(11);
+
+function randomHeroName2()
+{
+    $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
+    $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
+    $heroes = "";
+
+    $rand = rand(0, 10);
+    $heroes = $hero_firstnames[$rand]. " - " . $hero_lastnames[$rand];
+    return $heroes;
+
+    // foreach (array_combine($hero_firstnames, $hero_lastnames) as $firstname => $lastname) {
+    //     $heroes = $hero_firstnames. " ". $hero_lastnames;
+    // }
+
+}
+print_r("Here is the name: " . randomHeroName2());
+
+?>
